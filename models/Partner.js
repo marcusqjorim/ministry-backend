@@ -32,12 +32,11 @@ const partnerSchema = new mongoose.Schema(
     },
     salvationExperience: {
       type: String,
-      enum: ["yes", "looking", "no", ""],
       default: "",
     },
     howHeard: {
       type: String,
-      enum: ["friend", "social", "church", "website", "other", ""],
+      enum: ["friend", "social", "event", "website", "other", ""],
       default: "",
     },
     interests: [{
