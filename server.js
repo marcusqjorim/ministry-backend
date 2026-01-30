@@ -16,7 +16,8 @@ app.use(cors({
   origin: [
     "http://localhost:5173", 
     "http://localhost:5174",
-    "https://lighthearted-flan-d6cea5.netlify.app"
+    "https://lighthearted-flan-d6cea5.netlify.app",
+    "https://ministry-frontend.pages.dev"
   ],
 }));
 
