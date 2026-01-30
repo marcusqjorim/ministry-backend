@@ -13,7 +13,11 @@ const app = express();
 
 // CORS configuration for frontend
 app.use(cors({
-  origin: ["http://localhost:5173", "http://localhost:5174"],
+  origin: [
+    "http://localhost:5173", 
+    "http://localhost:5174",
+    "https://lighthearted-flan-d6cea5.netlify.app"
+  ],
 }));
 
 app.use(express.json());
