@@ -60,9 +60,9 @@ exports.registerPartner = async (req, res) => {
 exports.getPartners = async (req, res) => {
   try {
     const partners = await Partner.find().sort({ createdAt: -1 });
-    res.json(partners);
+    res.json({ success: true, data: partners });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 
@@ -77,12 +77,12 @@ exports.updatePartnerStatus = async (req, res) => {
     );
 
     if (!partner) {
-      return res.status(404).json({ message: "Partner not found" });
+      return res.status(404).json({ success: false, message: "Partner not found" });
     }
 
-    res.json(partner);
+    res.json({ success: true, data: partner });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 
@@ -91,10 +91,10 @@ exports.deletePartner = async (req, res) => {
   try {
     const partner = await Partner.findByIdAndDelete(req.params.id);
     if (!partner) {
-      return res.status(404).json({ message: "Partner not found" });
+      return res.status(404).json({ success: false, message: "Partner not found" });
     }
-    res.json({ message: "Partner deleted" });
+    res.json({ success: true, message: "Partner deleted" });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
