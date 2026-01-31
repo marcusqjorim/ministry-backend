@@ -28,6 +28,7 @@ app.use('/api/auth', require('./routes/auth.routes'));
 app.use('/api/testimonies', require('./routes/testimonies.routes'));
 app.use('/api/events', require('./routes/events.routes'));
 app.use('/api/partners', require('./routes/partners.routes'));
+app.use('/api/student-registrations', require('./routes/studentRegistrations.routes'));
 
 // Health check endpoints
 app.get("/api/health", (req, res) => {
